@@ -16,10 +16,21 @@ $.ajax({
 function showCountriesList(resp) {
     countriesList.empty();
     resp.forEach(function(item) {
-        $('<li>').text('Capital: ').appendTo(countriesList);
-        $('<li>').text('Capital: ').appendTo(countriesList);
-        $('<li>').text(item.capital).appendTo(countriesList);
-        $('<li>').text(item.capital).appendTo(countriesList);
+        if (item.capital) {
+            $('<li class="country-row">').text(item.name).appendTo(countriesList);
+            $('<li>').append($('<div>').text('Capital:'))
+                     .append($('<div>').text(item.capital))
+                     .append($('<div>').text('Land area:'))
+                     .append($('<div>').text(item.area + ' sq. km'))
+                     .append($('<div>').text('Population:'))
+                     .append($('<div>').text(item.population))
+                     .append($('<div>').text('Currency:'))
+                     .append($('<div>').text(item.currencies[0].name))
+                     .append($('<div>').text('Flag:'))
+                     .append($('<div>').append($('<img>').attr('src', item.flag).attr('alt', item.capital)))
+                     .appendTo(countriesList);
+
+        }
     });
 }
 
