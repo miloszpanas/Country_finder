@@ -1,42 +1,125 @@
 
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    margin: 0 0 3em 0;
+    padding: 0;
+    background: url('https://image.ibb.co/d0FyTy/map_of_the_world_2401458_1920.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: grey;
+    background-blend-mode: screen, difference, lighten;
+}
 * {
     box-sizing: border-box;
+}
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: wrap;
+    h1 {
+        width: 100%;
+        color: #0d610d;
+        font-variant: small-caps;
+        margin-top: 30px;
+        font-size: 2.8em;
+        font-weight: 800;
+        text-shadow: 1px 1px #4EA64E;
+    }
+    h2 {
+        width: 100%;
+        font-variant: small-caps;
+        margin-bottom: 30px;
+        font-size: 1.9em;
+        letter-spacing: 1px;
+        font-weight: 800;
+        color: #0d610d;
+        text-shadow: 1px 1px #4EA64E;
+    }
+    #search, #country-name {
+        margin: 0 auto;
+        padding: 5px;
+        min-width: 11.25em;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    }
+    #search {
+        margin-right: 0;
+        background-color: rgba(76, 175, 80, 1);
+        color: white;
+        font-size: 1.2em;
+        text-shadow: 1px 1px black;
+        border: none;
+        text-decoration: none;
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(76, 175, 80, 0.9);
+        }
+    }
+    #country-name {
+        margin-left: 0;
+    }
+}
+
+#countries {
+    display: flex;
+    flex-wrap: wrap;
+    .country-row {
+        font-size: 3.5em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #0d1bdc;
+        text-shadow: 1px 1px black;
+        margin: 10px 0 10px 0;
+    }
+    li {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        div {
+            width: 40%;
+            margin-left: 5%;
+            display: flex;
+            align-items: center;
+            border: 1px solid black;
+            margin-bottom: 1px;
+            padding: 3px 0 3px 6px;
+            background-color: #F3D449;
+            font-weight: bold;
+            font-size: 1.1em;
+            &:nth-child(2n) {
+                margin-left: 0;
+                margin-right: 5%;
+                padding: 3px 0 3px 6px;
+                background-color: #FEFE99;
+            }
+            img {
+                width: 65px;
+                height: auto;
+                box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+                margin: 5px;
+            }
+        }
+    }
 }
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-#countries {
-    display: flex;
-    flex-wrap: wrap;
-    li {
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-        div {
-            width: 50%;
-            display: flex;
-            align-items: center;
-            border: 1px solid black;
-            img {
-                width: 65px;
-                height: auto;
-            }
+
+@media(max-width: 398px) {
+    .wrapper {
+        #search {
+            margin: 0 auto;
+        }
+        #country-name {
+            margin: 3px auto 0;
         }
     }
 }
-
-#countries li.country-row {
-    display: inline-flex;
-    -ms-flex-order: 2;
-    -webkit-flex-order: 2;
-    .flag {
-        display: inline-flex;
-        width: 100%;
-        -ms-flex-order: 1;
-        -webkit-flex-order: 1;
-    }
-}
-
 
