@@ -103,6 +103,8 @@ ul {
   .wrapper #search {
     margin: 0 auto; }
   .wrapper #country-name {
-    margin: 3px auto 0; } }
+    margin: 3px auto 0; }
+  #countries .country-row {
+    font-size: 3em; } }
 
 /*# sourceMappingURL=style.css.map */
